@@ -47,7 +47,7 @@
 .auth__input:focus{
   border: none;
   outline: none;
-  background-color: white;
+  background-color:#E8E8E8 ;
 }
 
 .auth__line {
