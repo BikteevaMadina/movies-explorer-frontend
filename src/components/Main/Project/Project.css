@@ -1,0 +1,194 @@
+.project {
+  margin: 110px 70px 0 70px;
+}
+
+.section__title {
+  position: relative;
+  margin: 0;
+  padding-bottom: 23px;
+  font-size: 22px;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  font-family: Inter;
+  font-weight: 400;
+}
+
+.section__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+
+.project__list {
+  margin: 0;
+  padding: 70px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  list-style: none;
+}
+
+.project__title {
+  margin: 0;
+  color: #000;
+  font-size: 20px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+
+.project__info {
+  margin: 0;
+  color: #000;
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.project__steps {
+  padding: 60px 0 0 0;
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 4fr;
+  grid-template-rows: repeat(2, auto);
+}
+
+.project__time {
+  margin: 0;
+  padding: 11px 10px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #f2f2f2;
+}
+
+.project__time_accent {
+  color: #fff;
+  background-color: #000;
+}
+
+.project__time_management {
+  margin: 0;
+  padding: 10px 0 0 0;
+  color: #a0a0a0;
+  text-align: center;
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+}
+
+@media screen and (min-width: 200px) {
+  .project {
+    margin: 60px 18px 0 18px;
+  }
+}
+
+@media screen and (min-width: 401px) {
+.project {
+  margin: 110px 50px 0 50px;
+}
+
+  .project__list {
+    padding-top: 60px;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .project__info {
+    padding-top: 16px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .project__title {
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: -0.72px;
+  }
+
+  .project__steps {
+    padding-top: 60px;
+  }
+
+  .project__time {
+    padding: 10px 11px;
+    font-size: 11px;
+  }
+
+  .project__time_management {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .section_title {
+    padding-bottom: 24px;
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .project__list {
+    padding-top: 70px;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .project__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .project__info {
+    padding-top: 22px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .project__steps {
+    padding-top: 93px;
+  }
+
+  .project__time {
+    padding: 9px 10px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .project__time_management {
+    padding-top: 14px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .project {
+    grid-column: 2/3;
+  }
+
+  .project__list {
+    gap: 40px;
+  }
+
+  .project__info {
+    padding-top: 26px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .project__steps {
+    padding-top: 110px;
+  }
+}

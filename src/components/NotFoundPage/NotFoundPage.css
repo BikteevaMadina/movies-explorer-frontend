@@ -1,0 +1,32 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+}
+
+.error__title {
+  font-weight: 400;
+  font-size: 140px;
+  line-height: calc(169 / 140);
+  margin: 0;
+}
+
+.error__message {
+  padding-bottom: 184px;
+}
+
+.error__button {
+  background-color: transparent;
+
+  border: none;
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
