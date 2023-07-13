@@ -1,4 +1,4 @@
-function getEndLine(num, titles) {
+function getLine(num, titles) {
     return `${num} ${
       titles[
         num % 10 === 1 && num % 100 !== 11
@@ -10,4 +10,4 @@ function getEndLine(num, titles) {
     }`
   }
   
-  export default getEndLine;
+  export default getLine;

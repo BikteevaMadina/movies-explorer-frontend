@@ -1,6 +1,6 @@
 import { saveCardList } from "../../utils/constants";
 import { durationTitles } from "../../utils/constants.js";
-import getEndLine from "../../utils/getEndLine.js";
+import getEndLine from "../../utils/getLine.js";
 
 function MoviesCard({ movieId, duration, image, name, typeCardBtn }) {
   const isSavedMovieCard = saveCardList.some((i) => i.movieId === movieId);
