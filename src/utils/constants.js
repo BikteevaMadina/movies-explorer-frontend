@@ -1,3 +1,31 @@
+
+const generateId = () => {
+  return Math.random().toString(36).substr(2, 9);
+};
+export const headerMenu = [
+  {
+    id: generateId(),
+    name: "Фильмы",
+    link: "/movies",
+  },
+  {
+    id: generateId(),
+    name: "Сохранённые фильмы",
+    link: "/saved-movies",
+  },
+];
+
+export const defaultMovies = [
+  { id: generateId(), saved: true },
+  { id: generateId(), saved: false },
+  { id: generateId(), saved: false },
+  { id: generateId(), saved: false },
+  { id: generateId(), saved: true },
+  { id: generateId(), saved: true },
+  { id: generateId(), saved: false },
+  { id: generateId(), saved: false },
+];
+
 export const loginFormSetting = {
   type: "login",
   title: "Рады видеть!",
@@ -16,7 +44,8 @@ export const registerFormSetting = {
   transitionText: "Уже зарегистрированы?",
 };
 export const durationTitles = ["минута", "минуты", "минут"];
-export const movieCardList = [
+
+export const cardList = [
   {
     country: "Россия",
     director: "Роман Прыгунов",

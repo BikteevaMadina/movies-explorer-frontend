@@ -49,6 +49,7 @@
   left: 0;
   background-image: url(../../images/icon.svg);
   background-repeat: no-repeat;
+  
 }
 
 .search__form-input {
@@ -76,6 +77,11 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.search__submit:hover{
+  opacity: 0.7;
 }
 
 .filter__label {

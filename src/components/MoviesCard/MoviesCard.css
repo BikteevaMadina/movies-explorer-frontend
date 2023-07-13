@@ -1,14 +1,20 @@
-.card {
+ .card {
   box-sizing: border-box;
-  background-color: white;
+  gap: 10px;
   border-radius: 6px;
+  background: #fdfdfd;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+  height: 319px;
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 14px;
 }
 
 .card__header {
-  padding: 14px;
   display: flex;
   justify-content: space-between;
-  gap: 10px;
 }
 
 .card__title {
@@ -65,6 +71,7 @@
   background-repeat: no-repeat;
   background-position: center;
   transition: background-size 0.2s ease-out;
+  color: transparent;
 }
 
 .card__btn_type_del:hover {
@@ -73,11 +80,12 @@
 
 .card__btn_saved {
   background-image: url("../../images/save6d.svg");
-  background-size: 10px 10px;
-  background-color: #ff4062;
+  background-size: 100px 29px;
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.2s ease-out;
+  color: transparent;
+  
 }
 
 .card__btn_saved:hover {
@@ -86,9 +94,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .card__header {
-    padding: 18px;
-  }
+  
   .card__title {
     font-size: 15px;
   }
@@ -103,4 +109,4 @@
     font-size: 12px;
     line-height: 11px;
   }
-}
+};

@@ -7,7 +7,7 @@ function Cutaway() {
             <p className="cutaway__subtitle">Листайте ниже, 
             чтобы узнать больше про этот проект и его создателя.</p>
             <button className="cutaway__button">
-            <a href="/#about"
+            <a href="/#project"
             className="cutaway__link">
             Узнать больше
             </a>

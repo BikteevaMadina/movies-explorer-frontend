@@ -11,7 +11,7 @@ import Register from "../Register/Register.js";
 import NotFoundPage from "../NotFoundPage/NotFoundPage.js"
 
 function App() {
-  const [currentUser] = useState({
+  const [currentUser, setCurrentUser] = useState({
     name: 'Madina',
     email: "madinka@mail.ru",
     logeIn: false,

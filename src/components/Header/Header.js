@@ -1,43 +1,66 @@
-import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { CurrentUserContext } from '../../context/CurrentUserContext.js';
-import Navigation from '../Navigation/Navigation.js';
+import React, { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../images/logo.svg";
+import AuthNav from "./AuthNav.js";
+import Navigation from "./Navigation.js";
 
-function Header({ theme }) {
-    const { logeIn } = useContext(CurrentUserContext);
-    const [ openBurger, setOpenBurger ] = useState(false);
+const Header = (props) => {
+  const { isLoggedIn = true } = props;
+  const [isActiveBurger, setIsActiveBurger] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+  const [hiddenHeader, setHiddenHeader] = useState(false);
+  const handleButton = () => {
+    setIsActiveBurger(!isActiveBurger);
 
-    function handleToggleBurger() {
-        setOpenBurger(!openBurger);
+    isActiveBurger ? setHiddenHeader(false) : setHiddenHeader(true);
+  };
+
+  const handleScroll = useCallback(() => {
+    const currentPosition = window.pageYOffset;
+    if (!isActiveBurger) {
+      currentPosition > scrollTop && currentPosition > 20
+        ? setHiddenHeader(true)
+        : setHiddenHeader(false);
+      setScrollTop(currentPosition);
+    } else {
+      if (window.innerWidth >= 770) {
+        setIsActiveBurger(false);
       }
-
-      return (
-        <header className="header">
-          <Link to="/" className="header__logo"/>
-          { !theme.default && ( logeIn
-            ? <div>
-                <div className={`header__overlay ${openBurger ? 'header__overlay_active' : ''}`}/>
-                <button
-                  className="header__burger"
-                  onClick={handleToggleBurger}>
-                  <div
-                    className={`header__burger-menu ${openBurger ? 'header__burger-menu_active' : ''}`}/>
-                </button>
-                <Navigation
-                  isOpenBurger={openBurger}/>
-              </div>
-            : <div className="header__login">
-                <Link to="/signup" className="header__link">
-                  Регистрация
-                </Link>
-                <Link to="/signin" className="header__button">
-                  Войти
-                </Link>
-              </div>
-            )
-          }
-    
-        </header>
-      )
     }
-    export default Header;
+  }, [isActiveBurger, scrollTop]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll, scrollTop]);
+
+  return (
+    <header className={`header ${hiddenHeader ? "header__hidden" : ""}`}>
+      <div className="header__wrapper">
+        <Link to="/" className="header__link">
+          <img src={logo} alt="Логотип проекта" className="header__logo" />
+        </Link>
+        {isLoggedIn ? (
+          <>
+            <Navigation isActiveBurger={isActiveBurger}>
+              <Link to={"/profile"} className={"header__personal-account-link"}>
+                Аккаунт
+              </Link>
+            </Navigation>
+            <button
+              type="button"
+              className={`header__burger ${isActiveBurger ? "active" : ""}`}
+              onClick={handleButton}
+            >
+              <span></span>
+            </button>
+          </>
+        ) : (
+          <AuthNav />
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;

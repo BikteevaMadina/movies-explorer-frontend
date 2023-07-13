@@ -6,19 +6,21 @@ import Student from "./Student/Student.js";
 import Techno from "./Techno/Techno.js";
 import Footer from "../Footer/Footer.js";
 
-function Main() {
-    return (
-        <div className="page">
-          <Header
-            theme={{ default: false }}/>
-            <Cutaway/>
-            <Project/>
-            <Techno/>
-            <Student/>
-            <Portfolio/>
-            <Footer/>
-            </div>
 
-            )
+
+const Main = (props) => {
+  return (
+    <div className="page">
+      <Header/>
+      <main>
+      <Cutaway />
+      <Project />
+      <Techno />
+      <Student />
+      <Portfolio />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 export default Main;

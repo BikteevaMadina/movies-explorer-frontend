@@ -1,33 +1,38 @@
-import { saveCardList } from "../../utils/constants";
-import { durationTitles } from "../../utils/constants.js";
-import getEndLine from "../../utils/getLine.js";
 
-function MoviesCard({ movieId, duration, image, name, typeCardBtn }) {
-  const isSavedMovieCard = saveCardList.some((i) => i.movieId === movieId);
+import "./MoviesCard.css";
+import defaultPhoto from "../../images/card.svg";
+import React, { useState } from "react";
+function MoviesCard(props) {
+  const { listType, isMovieSave } = props;
+  const [isSaved, getIsSaved] = useState(isMovieSave);
 
-  function getDuration(duration, durationTitles) {
-    return getEndLine(duration, durationTitles);
-  }
-
+  const handleClickSave = () => {
+    getIsSaved(!isSaved);
+  };
   return (
-    <li className="card">
-      <div className="card__header">
-        <h2 className="card__title">{name}</h2>
-        <p className="card__time">{getDuration(duration, durationTitles)}</p>
+    <article className="card">
+      <div className="card__header" >
+      <h2 className="card__title">Сила мысли</h2>
+      <p className="card__time">1ч 47м</p>
       </div>
-      <img src={image} alt={name} className="card__img" />
-      <button
-        className={`card__btn ${
-          !typeCardBtn.save
-            ? "card__btn_type_del"
-            : isSavedMovieCard
-            ? "card__btn_saved"
-            : ""
+      <img className="card__img" alt="Фотография фильма" src={defaultPhoto} />
+      {listType === "main" ? (
+             <button
+         className={`card__btn ${
+          isSaved
+               
+             ? "card__btn_saved"
+             : ""
+              
         }`}
-      >
-        {!typeCardBtn.save || isSavedMovieCard ? "" : "Сохранить"}
-      </button>
-    </li>
+        type="button"
+        onClick={handleClickSave}>Сохранить</button>
+      
+      ) : (
+        <button className={"card__btn_type_del "} type="button" />
+      )}
+      
+    </article>
   );
 }
 
