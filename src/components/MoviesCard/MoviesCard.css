@@ -59,6 +59,7 @@
   background-color: white;
   cursor: pointer;
   transition: color 0.2s ease-out;
+
 }
 
 .card__btn:hover {
@@ -67,15 +68,14 @@
 
 .card__btn_type_del {
   background-image: url("../../images/d6.svg");
-  background-size: 8px 8px;
+  background-size: 100px 29px;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-size 0.2s ease-out;
-  color: transparent;
+  transition: all 0.2s ease-out;
 }
 
 .card__btn_type_del:hover {
-  background-size: 12px 12px;
+  color: #8b8b8b;
 }
 
 .card__btn_saved {
@@ -91,6 +91,7 @@
 .card__btn_saved:hover {
   background-image: url("../../images/d6.svg");
   background-color: #8b8b8b;
+  color: transparent;
 }
 
 @media screen and (min-width: 768px) {

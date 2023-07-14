@@ -23,13 +23,14 @@ function MoviesCard(props) {
                
              ? "card__btn_saved"
              : ""
+             
               
         }`}
         type="button"
         onClick={handleClickSave}>Сохранить</button>
       
       ) : (
-        <button className={"card__btn_type_del "} type="button" />
+        <button className=" card__btn_type_del" type="button" />
       )}
       
     </article>
