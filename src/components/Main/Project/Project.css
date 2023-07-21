@@ -1,12 +1,12 @@
 .project {
-  margin: 110px 70px 0 70px;
+  margin: 110px 70px 110px 70px;
 }
 
 .section__title {
   position: relative;
   margin: 0;
-  padding-bottom: 23px;
-  font-size: 22px;
+  padding-bottom: 24px;
+  font-size: 18px;
   line-height: normal;
   letter-spacing: -0.88px;
   font-family: Inter;
@@ -18,14 +18,14 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  max-width: 1140px;
   height: 1px;
   background-color: #000;
 }
 
 .project__list {
   margin: 0;
-  padding: 70px 0 0 0;
+  padding: 60px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -35,22 +35,21 @@
 .project__title {
   margin: 0;
   color: #000;
-  font-size: 20px;
-  font-family: Inter;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: -0.8px;
+  letter-spacing: -0.72px;
+  padding-bottom: 17px;
 }
 
 .project__info {
   margin: 0;
   color: #000;
-  font-size: 14px;
-  font-family: Inter;
+  font-size: 11px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 16px;
 }
 
 .project__steps {
@@ -64,8 +63,7 @@
   margin: 0;
   padding: 11px 10px;
   text-align: center;
-  font-size: 14px;
-  font-family: Inter;
+  font-size: 11px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -82,23 +80,22 @@
   padding: 10px 0 0 0;
   color: #a0a0a0;
   text-align: center;
-  font-size: 14px;
-  font-family: Inter;
+  font-size: 11px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 17px;
+  font-weight: 400;
+  line-height: normal;
 }
 
 @media screen and (min-width: 200px) {
   .project {
-    margin: 60px 18px 0 18px;
+    margin: 70px 18px 0 18px;
   }
 }
 
 @media screen and (min-width: 401px) {
-.project {
-  margin: 110px 50px 0 50px;
-}
+  .project {
+    margin: 90px 50px 90px 50px;
+  }
 
   .project__list {
     padding-top: 60px;
@@ -120,6 +117,7 @@
 
   .project__steps {
     padding-top: 60px;
+    grid-template-columns: minmax(140px, 1fr) 4fr;
   }
 
   .project__time {
@@ -133,8 +131,8 @@
 }
 
 @media screen and (min-width: 576px) {
-  .section_title {
-    padding-bottom: 24px;
+  .section__title {
+    padding-bottom: 26px;
     font-size: 22px;
     line-height: 27px;
   }
@@ -142,7 +140,7 @@
   .project__list {
     padding-top: 70px;
     flex-direction: row;
-    gap: 30px;
+    gap: 35px;
   }
 
   .project__title {
@@ -173,13 +171,15 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .project {
     grid-column: 2/3;
+    margin: 110px 53px 110px 53px;
   }
 
   .project__list {
-    gap: 40px;
+    gap: 59px;
+    max-width: 1140px;
   }
 
   .project__info {
@@ -190,5 +190,6 @@
 
   .project__steps {
     padding-top: 110px;
+    max-width: 1140px;
   }
 }

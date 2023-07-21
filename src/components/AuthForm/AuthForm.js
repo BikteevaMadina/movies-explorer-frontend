@@ -13,11 +13,8 @@ function AuthForm({ setting }) {
           <div className="auth__input-row">
             <label className="auth__input-label">Имя</label>
             <input
-              val="true"
               type="text"
               placeholder="Имя"
-              minLength="2"
-              maxLength="30"
               className="auth__input"
               required
             />
@@ -43,7 +40,6 @@ function AuthForm({ setting }) {
             type="password"
             className="auth__input"
             required
-            val="true"
           />
           <span className="auth__line"></span>
         </div>

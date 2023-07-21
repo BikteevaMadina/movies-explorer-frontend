@@ -3,11 +3,18 @@
   display: flex;
   align-items: center;
   margin: 70px;
-  padding: 20px 30px;
+  padding: 20px 30px 20px 19px;
   border-radius: 9px;
   justify-content: space-between;
   background: #fdfdfd;
   box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+}
+
+::placeholder {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .search:after {
@@ -18,7 +25,7 @@
   height: 1px;
   width: 100%;
   background-color: #e8e8e8;
-  transform: translateY(70px);
+  transform: translateY(110px);
 }
 
 .search__form {
@@ -28,8 +35,7 @@
   width: 100%;
   flex: 1;
   justify-content: space-between;
-  padding-right: 60px;
-  
+  padding-right: 50px;
 }
 
 .search__form:after {
@@ -49,7 +55,6 @@
   left: 0;
   background-image: url(../../images/icon.svg);
   background-repeat: no-repeat;
-  
 }
 
 .search__form-input {
@@ -58,7 +63,13 @@
   margin-left: 40px;
   width: 100%;
   outline: none;
+}
 
+.search__form-input::placeholder {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .search__form-input:focus {
@@ -70,7 +81,7 @@
   border: none;
   border-radius: 50%;
   max-width: 34px;
-  width: 100%;
+  width: 80px;
   height: 34px;
   cursor: pointer;
   background-image: url(../../images/arrow-button.svg);
@@ -80,67 +91,70 @@
   transition: opacity 0.3s ease-in;
 }
 
-.search__submit:hover{
+.search__submit:hover {
   opacity: 0.7;
 }
 
 .filter__label {
-    position: relative;
-    display: inline-block;
-    width: 168px;
-    height: 20px;
-  }
-  
-  .filter__label .filter__input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .filter__switch {
-    max-width: 36px;
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ebebeb;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.2s ease-out;
-    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.20)
-  }
-  
-  .filter__switch:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    background-color: black;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  
-  .filter__switch:after {
-    position: absolute;
-    content: "Короткометражки";
-    top: 0;
-    left: 50px;
-    
-  }
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 20px;
+}
 
-  
-  .filter__input:checked + .filter__switch:before {
-    -webkit-transform: translateX(16px);
-    -ms-transform: translateX(16px);
-    transform: translateX(16px);
-    background-color: rgba(61, 220, 132, 1)
-  }
-  
+.filter__label .filter__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.filter__switch {
+  max-width: 36px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ebebeb;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+  box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.2);
+}
+
+.filter__switch:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.filter__switch:after {
+  position: absolute;
+  content: "Короткометражки";
+  top: 0;
+  left: 50px;
+  color: #000;
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.filter__input:checked + .filter__switch:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+  background-color: rgba(61, 220, 132, 1);
+}
 
 @media screen and (max-width: 768px) {
   .search {
@@ -164,18 +178,26 @@
   }
   .search__form-input {
     margin: 0;
+    padding: 0;
   }
 
   .filter {
     position: absolute;
-    bottom: 0;
+    bottom: -20px;
     left: 50%;
     transform: translate(-50%, 45px);
-}
+  }
 }
 
 @media screen and (max-width: 375px) {
   .search {
-    margin: 70px 10px;
+    margin: 80px 10px;
+  }
+
+  .search__form-input::placeholder{
+    font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
   }
 }

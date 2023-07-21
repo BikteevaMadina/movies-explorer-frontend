@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 386px;
+    width: 381px;
   }
   
   .navigation__list {
@@ -11,10 +11,17 @@
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
+    width: 231px;
+    gap:27px;
   }
   
   .navigation__item {
-    margin: 0 16px 0 0;
+    color: #000;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
   }
   
   .navigation__item:last-of-type {
@@ -30,7 +37,10 @@
     font-size: 13px;
     line-height: 18px;
     transition: opacity 0.3s ease-in;
+    
   }
+
+  
   
   .navigation__link:hover {
     opacity: 0.7;

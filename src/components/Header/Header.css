@@ -2,7 +2,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 17px 0;
-  background-color: #f3c1f8;
+  background-color: white;
   transition: top 0.5s ease;
   display: flex;
   align-items: center;
@@ -26,6 +26,11 @@
   display: block;
   width: 38px;
   height: 38px;
+  transition: opacity 0.3s ease-in;
+}
+
+.header__link:hover {
+  opacity: 0.7;
 }
 
 .header__logo {
@@ -45,15 +50,20 @@
 .header__personal-account-link {
   display: flex;
   align-items: center;
-  min-width: 100px;
-  min-height: 30px;
+  width: 90px;
+  height: 32px;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   color: black;
   transition: opacity 0.3s ease-in;
-  background: url(../../images/icon__COLOR_icon-main.svg) no-repeat right center;
+  background: url(../../images/icon__COLOR_icon-main.svg) no-repeat;
+  background-position: 68px 10px;
+  border-radius: 40px;
+  box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  letter-spacing: inherit;
 }
 
 .header__personal-account-link:hover {
@@ -88,7 +98,7 @@
     content: "";
     background-color: black;
     position: absolute;
-    width: 100%;
+    width: 22px;
     height: 3px;
     transition: all 0.3s ease 0s;
   }
@@ -97,20 +107,20 @@
     content: "";
     background-color: black;
     position: absolute;
-    width: 100%;
+    width: 22px;
     height: 3px;
-    left: 0;
+    left: -3px;
     top: 10px;
     transition: all 0.3s ease 0s;
   }
 
   .header__burger::before {
-    left: 0;
+    left: -3px;
     top: 0;
   }
 
   .header__burger::after {
-    left: 0;
+    left: -3px;
     bottom: 0;
   }
 

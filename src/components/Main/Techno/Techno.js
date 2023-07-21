@@ -9,7 +9,7 @@ function Techno() {
             7 технологий
           </h3>
           <p className="techno__info">
-            На&nbsp;курсе веб-разработки мы&nbsp;освоили технологии, которые применили в&nbsp;дипломном проекте.
+            На&nbsp;курсе веб-разработки мы&nbsp;освоили технологии, которые применили в&nbsp;дипломном&nbsp;проекте.
           </p>
           <ul className="techno__list">
             <li className="techno__items">

@@ -4,17 +4,18 @@
   border-radius: 6px;
   background: #fdfdfd;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
-  height: 319px;
-  width: 360px;
+  height: 271px;
+  max-width: 300px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 14px;
+  /* padding: 14px; */
 }
 
 .card__header {
   display: flex;
   justify-content: space-between;
+  padding: 22px 18px 0px 18px;
 }
 
 .card__title {
@@ -46,7 +47,7 @@
 
 .card__btn {
   display: block;
-  margin: 14px auto;
+  margin: 0 auto;
   padding: 0;
   width: 100px;
   height: 29px;
@@ -71,7 +72,13 @@
   background-size: 100px 29px;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all 0.2s ease-out;
+  transition: color 0.2s ease-out;
+  width: 100px;
+  height: 29px;
+  margin: 14px auto;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 .card__btn_type_del:hover {
@@ -94,7 +101,19 @@
   color: transparent;
 }
 
+@media screen and (min-width:400px) {
+  .card{
+    max-width: 342px;
+    min-height: 309px;
+  }
+  
+}
+
 @media screen and (min-width: 768px) {
+  .card{
+   max-width: 360px;
+    min-height: 319px;
+  }
   
   .card__title {
     font-size: 15px;
@@ -103,10 +122,10 @@
     font-size: 13px;
   }
   .card__img {
-    height: 190px;
+    height: 200px;
   }
   .card__btn {
-    margin: 18px auto;
+    margin: auto;
     font-size: 12px;
     line-height: 11px;
   }
