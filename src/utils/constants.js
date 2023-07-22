@@ -26,23 +26,24 @@ export const defaultMovies = [
   { id: generateId(), saved: false },
 ];
 
-export const loginFormSetting = {
-  type: "login",
-  title: "Рады видеть!",
-  transitionPath: "/signup",
-  btnSubmitText: "Войти",
-  transitionLinkText: "Регистрация",
-  transitionText: "Ещё не зарегистрированы?",
-};
+// export const loginFormSetting = {
+//   type: "login",
+//   title: "Рады видеть!",
+//   transitionPath: "/signup",
+//   btnSubmitText: "Войти",
+//   transitionLinkText: "Регистрация",
+//   transitionText: "Ещё не зарегистрированы?",
+  
+// };
 
-export const registerFormSetting = {
-  type: "register",
-  title: "Добро пожаловать!",
-  transitionPath: "/signin",
-  transitionLinkText: "Войти",
-  btnSubmitText: "Зарегистрироваться",
-  transitionText: "Уже зарегистрированы?",
-};
+// export const registerFormSetting = {
+//   type: "register",
+//   title: "Добро пожаловать!",
+//   transitionPath: "/signin",
+//   transitionLinkText: "Войти",
+//   btnSubmitText: "Зарегистрироваться",
+//   transitionText: "Уже зарегистрированы?",
+// };
 export const durationTitles = ["минута", "минуты", "минут"];
 
 export const cardList = [

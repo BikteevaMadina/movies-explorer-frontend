@@ -1,63 +1,55 @@
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 
-function AuthForm({ setting }) {
+function AuthForm({
+  title,
+  children,
+  buttonText,
+  onSubmit,
+  route,
+  linkToSignin,
+  textToRegistr,
+  isValid,
+}) {
   return (
-    <section className="auth">
-      <Link to="/" className="header__link">
-        <img src={logo} alt="Логотип проекта" className="auth__logo" />
-      </Link>
-      <h2 className="auth__title">{setting.title}</h2>
-      <form className="auth__form">
-        {setting.type === "register" && (
-          <div className="auth__input-row">
-            <label className="auth__input-label">Имя</label>
-            <input
-              type="text"
-              placeholder="Имя"
-              className="auth__input"
-              required
-            />
-            <span className="auth__line"></span>
+    <main className="auth">
+      <section className="auth__container">
+        <Link to="/" className="auth__container_logo-link">
+          <img
+            className="auth__container_logo"
+            src={logo}
+            alt="Логотип сайта"
+          />
+        </Link>
+        <h2 className="auth__container_header">{title}</h2>
+        <form
+          className="auth__container_form"
+          method="get"
+          onSubmit={onSubmit}
+          noValidate
+        >
+          <fieldset className="auth__container_fieldset">{children}</fieldset>
+          <div className="auth__container_link-buttons">
+            <button
+              className={`auth__container_submit ${
+                !isValid && "auth__container_submit-disabled"
+              }`}
+              type="submit"
+              aria-label={buttonText}
+              disabled={!isValid && true}
+            >
+              {buttonText}
+            </button>
+            <p className="auth__container_text">
+              {textToRegistr}
+              <Link className="auth__container_link" to={route}>
+                {linkToSignin}
+              </Link>
+            </p>
           </div>
-        )}
-        <div className="auth__input-row">
-          <label className="auth__input-label">E-mail</label>
-          <input
-            className="auth__input"
-            id="email"
-            type="email"
-            placeholder="Введите почту"
-            required
-          />
-          <span className="auth__line"></span>
-        </div>
-
-        <div className="auth__input-row">
-          <label className="auth__input-label">Пароль</label>
-          <input
-            placeholder="Введите пароль"
-            type="password"
-            className="auth__input"
-            required
-          />
-          <span className="auth__line"></span>
-        </div>
-      </form>
-
-      <div className="auth__div">
-        <button type="submit" className="auth__submit-btn">
-          {setting.btnSubmitText}
-        </button>
-        <div className="auth__transition">
-          <p className="auth__transition-text">{setting.transitionText}</p>
-          <Link to={setting.transitionPath} className="auth__transition-link">
-            {setting.transitionLinkText}
-          </Link>
-        </div>
-      </div>
-    </section>
+        </form>
+      </section>
+    </main>
   );
 }
-
 export default AuthForm;
