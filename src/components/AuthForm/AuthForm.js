@@ -12,7 +12,7 @@ function AuthForm({
   isValid,
 }) {
   return (
-    <main className="auth">
+    <main className="form auth__form">
       <section className="auth__container">
         <Link to="/" className="auth__container_logo-link">
           <img

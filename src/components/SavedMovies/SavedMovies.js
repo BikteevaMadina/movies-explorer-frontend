@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header.js";
+import Content from "../Movies/Content.js";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm.js";
 import { CurrentUserContext } from "../../context/CurrentUserContext.js";
@@ -20,7 +21,9 @@ function SavedMovies() {
     <div className="page">
       <Header />
       <SearchForm />
+      <Content>
       <MoviesCardList cardList={saveCards} typeCardBtn={{ save: false }} />
+      </Content>
       <Footer />
     </div>
   );
