@@ -4,7 +4,7 @@ function Project() {
     <section
       id="project"
       className="project">
-      <h2 className="section__title">О проекте</h2>
+      <h2 className="section__project_title">О проекте</h2>
       <ul className="project__list">
         <li>
           <h3 className="project__title">

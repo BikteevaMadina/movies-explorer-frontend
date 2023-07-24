@@ -2,18 +2,18 @@
   margin: 110px 70px 110px 70px;
 }
 
-.section__title {
+.section__project_title {
   position: relative;
   margin: 0;
   padding-bottom: 24px;
-  font-size: 18px;
+  font-size: 22px;
   line-height: normal;
   letter-spacing: -0.88px;
   font-family: Inter;
   font-weight: 400;
 }
 
-.section__title::after {
+.section__project_title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -40,7 +40,6 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.72px;
-  padding-bottom: 17px;
 }
 
 .project__info {
@@ -90,6 +89,25 @@
   .project {
     margin: 70px 18px 0 18px;
   }
+
+  .section__project_title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.72px;
+  }
+
+  .project__list{
+    padding: 64px 0 0 0;
+  }
+
+  .project__info{
+    padding-top: 20px;
+  }
+   .project__steps{
+    padding: 55px 0 0 0;
+   }
 }
 
 @media screen and (min-width: 401px) {
@@ -131,7 +149,7 @@
 }
 
 @media screen and (min-width: 576px) {
-  .section__title {
+  .section__project_title {
     padding-bottom: 26px;
     font-size: 22px;
     line-height: 27px;

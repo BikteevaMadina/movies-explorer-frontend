@@ -7,7 +7,7 @@
   margin: 0;
 }
 
-.section__title {
+.section__techno_title {
   position: relative;
   margin: 0;
   padding-bottom: 23px;
@@ -18,7 +18,7 @@
   font-weight: 400;
 }
 
-.section__title::after {
+.section__techno_title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -30,7 +30,7 @@
 
 .techno__title {
   margin: 0;
-  padding: 50px 0 0 0;
+  padding: 90px 0 0 0;
   text-align: center;
   font-size: 50px;
   font-family: Inter;
@@ -42,20 +42,19 @@
 
 .techno__info {
   margin: 0 auto;
-  padding: 11px 0 0 0;
+  padding: 26px 0 0 0;
   text-align: center;
   font-size: 14px;
-  font-family: Inter;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
-
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.56px;
   max-width: 460px;
 }
 
 .techno__list {
   margin: 0;
-  padding: 50px 10px 0 10px;
+  padding: 100px 10px 0 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 90px);
   justify-content: center;
@@ -76,24 +75,39 @@
   letter-spacing: -0.56px;
 }
 
+/* @media screen and (max-width: 768px) {
+  .techno__title{
+    padding-top: 80px;
+  }
+  
+} */
+
 @media screen and (max-width: 850px) {
   .techno {
     padding: 90px 50px 100px 50px;
   }
 
   .techno__info {
-    max-width: 460px;
-    line-height: 18px;
     margin: 0 auto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+    letter-spacing: -0.48px;
+    padding-top: 22px;
   }
 
   .techno__list {
     grid-template-columns: repeat(auto-fit, 84px);
+    padding-top: 83px;
   }
 
   .techno__items {
     font-size: 12px;
     letter-spacing: -0.48px;
+  }
+  .techno__title {
+    padding-top: 80px;
   }
 }
 
@@ -118,5 +132,26 @@
   .techno__list {
     padding-left: 53px;
     padding-right: 53px;
+  }
+
+  .section__techno_title{
+    font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.72px;
+padding-bottom: 28px;
+  }
+
+  .techno__title{
+    padding-top: 52px;
+  }
+
+  .techno__info{
+    padding-top: 12px;
+  }
+
+  .techno__list{
+    padding-top: 50px;
   }
 }

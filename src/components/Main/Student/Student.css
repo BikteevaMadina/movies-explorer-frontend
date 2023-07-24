@@ -5,8 +5,8 @@
 .section__title {
   position: relative;
   margin: 0;
-  padding-bottom: 29px;
-  font-size: 18px;
+  padding-bottom: 23px;
+  font-size: 22px;
   line-height: normal;
   letter-spacing: -0.88px;
   font-family: Inter;
@@ -24,7 +24,7 @@
 }
 
 .student__cutaway {
-  padding: 60px 0 0 0;
+  padding: 66px 0 0 0;
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
@@ -190,5 +190,18 @@
 @media screen and (max-width: 400px) {
   .student {
     margin: 40px 14px 70px 14px;
+  }
+
+  .section__title{
+    font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.72px;
+padding-bottom: 27px;
+  }
+
+  .student__cutaway{
+    padding-top: 60px;
   }
 }

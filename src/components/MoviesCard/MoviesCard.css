@@ -67,12 +67,12 @@
   color: #8b8b8b;
 }
 
-.card__btn_type_del {
+.card__btn_del {
   background-image: url("../../images/d6.svg");
   background-size: 100px 29px;
   background-repeat: no-repeat;
   background-position: center;
-  transition: color 0.2s ease-out;
+  transition: opacity 0.3s ease-in;
   width: 100px;
   height: 29px;
   margin: 14px auto;
@@ -81,8 +81,9 @@
   cursor: pointer;
 }
 
-.card__btn_type_del:hover {
-  color: #8b8b8b;
+.card__btn_del:hover {
+  opacity: 0.7;
+  background-color: #8b8b8b;
 }
 
 .card__btn_saved {

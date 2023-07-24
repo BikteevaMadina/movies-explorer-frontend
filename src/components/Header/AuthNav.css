@@ -1,4 +1,4 @@
-.auth-nav {
+.auth__nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,82 +6,94 @@
   height: 74px;
   box-sizing: border-box;
   padding: 17px 70px 17px 70px;
-  background-color: #f3c1f8;
+  background-color: #F3C1F8;
+  
 }
 
-.auth-nav__list {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.auth-nav__item {
-  margin: 0 14px 0 0;
-}
-
-.auth-nav__item:last-of-type {
-  margin: 0;
-}
-
-.header__logo {
-  width: 38px;
-  height: 38px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 10px;
-  transition: opacity 0.3s ease-in;
-  cursor: pointer;
-}
-
-.header__logo:hover {
-  opacity: 0.7;
-}
-
-.auth-nav__link {
-  display: block;
-  padding: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 200px;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  transition: opacity 0.3s ease-in;
-}
-
-.auth-nav__link_type_login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 76px;
-  min-height: 32px;
-  background: black;
-  border-radius: 3px;
-  color: #ffffff;
-}
-
-.auth-nav__link:hover {
-  opacity: 0.7;
-}
-
-@media screen and (max-width: 768px) {
-  .auth-nav {
-    padding: 17px 14px;
+.auth__nav_list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  
   }
-}
-
-@media screen and (max-width: 400px) {
-  .auth-nav__link {
-    font-size: 10px;
+  
+  .auth__nav_item {
+    margin: 0 30px 0 0;
+  }
+  
+  .auth__nav_item:last-of-type {
+    margin: 0;
   }
 
-  .auth-nav__link_type_login {
-    min-width: 54px;
-    min-height: 26px;
+  .header__logo {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in;
+    cursor: pointer;
   }
-}
+  
+  .header__logo:hover {
+    opacity: 0.7;
+  }
+  
+  .auth__nav_link {
+    display: block;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 200px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    transition: opacity 0.3s ease-in;
+  }
+  
+  .auth__nav_link-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 76px;
+    min-height: 32px;
+    background: black;
+    border-radius: 3px;
+    color: #FFFFFF;
+  }
+  
+  .auth__nav_link:hover {
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width:768px) {
+    .auth__nav{
+      padding: 18px 30px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .auth__nav{
+      padding: 18px 14px;
+    }
+
+    .auth__nav_item{
+      margin: 0 14px 0 0;
+    }
+    .auth__nav_link {
+      font-size: 10px;
+    }
+  
+    .auth__nav_link-login {
+      min-width: 54px;
+      min-height: 26px;
+    
+    }
+
+   
+  }

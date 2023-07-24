@@ -43,7 +43,7 @@ const Header = (props) => {
         {isLoggedIn ? (
           <>
             <Navigation isActiveBurger={isActiveBurger}>
-              <Link to={"/profile"} className={"header__personal-account-link"}>
+              <Link to={"/profile"} className={"header__personal_account-link"}>
                 Аккаунт
               </Link>
             </Navigation>

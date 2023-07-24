@@ -12,8 +12,8 @@ import AuthNav from "../Header/AuthNav.js";
 const Main = (props) => {
   return (
     <div className="page">
-      <main>
       <AuthNav/>
+      <main>
       <Cutaway />
       <Project />
       <Techno />

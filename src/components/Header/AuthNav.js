@@ -5,26 +5,26 @@ import logo from "../../images/logo.svg";
 
 const AuthNav = () => {
   return (
-    <nav className={"auth-nav"}>
+    <header className={"auth__nav"}>
       <Link to="/" className="header__link">
         <img src={logo} alt="Логотип проекта" className="header__logo" />
       </Link>
-      <ul className={"auth-nav__list"}>
-        <li className={"auth-nav__item"}>
-          <Link to={"/signup"} className={"auth-nav__link"}>
+      <ul className={"auth__nav_list"}>
+        <li className={"auth__nav_item"}>
+          <Link to={"/signup"} className={"auth__nav_link"}>
             Регистрация
           </Link>
         </li>
-        <li className={"auth-nav__item_type_login"}>
+        <li className={"auth__nav_item-login"}>
           <Link
             to={"/signin"}
-            className={"auth-nav__link auth-nav__link_type_login"}
+            className={"auth__nav_link auth__nav_link-login"}
           >
             Войти
           </Link>
         </li>
       </ul>
-    </nav>
+    </header>
   );
 };
 

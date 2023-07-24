@@ -67,7 +67,7 @@
 
 @media screen and (min-width: 768px) {
   .portfolio {
-    margin: 0px 50px 87px 50px;
+    margin: 0px 50px 90px 50px;
   }
 
   .portfolio__title {
@@ -91,9 +91,9 @@
   }
 }
 
-@media screen and (min-width: 1660px) {
+@media screen and (min-width: 1280px) {
   .portfolio {
-    margin: 100px 0 184px 0;
+    margin: 0px 70px 125px 70px;
     grid-column: 2/3;
   }
 
