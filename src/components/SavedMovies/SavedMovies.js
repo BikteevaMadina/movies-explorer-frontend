@@ -20,8 +20,9 @@ function SavedMovies() {
   return (
     <div className="page">
       <Header />
-      <SearchForm />
+     
       <Content>
+      <SearchForm />
       <MoviesCardList cardList={saveCards} typeCardBtn={{ save: false }} />
       </Content>
       <Footer />

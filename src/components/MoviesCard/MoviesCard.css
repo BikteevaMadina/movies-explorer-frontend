@@ -1,4 +1,4 @@
- .card {
+.card {
   box-sizing: border-box;
   gap: 10px;
   border-radius: 6px;
@@ -15,7 +15,7 @@
 .card__header {
   display: flex;
   justify-content: space-between;
-  padding: 22px 18px 0px 18px;
+  padding: 24px 14px 0px 14px;
 }
 
 .card__title {
@@ -47,7 +47,7 @@
 
 .card__btn {
   display: block;
-  margin: 0 auto;
+ margin: 0 auto 4px;
   padding: 0;
   width: 100px;
   height: 29px;
@@ -60,7 +60,6 @@
   background-color: white;
   cursor: pointer;
   transition: color 0.2s ease-out;
-
 }
 
 .card__btn:hover {
@@ -75,7 +74,7 @@
   transition: opacity 0.3s ease-in;
   width: 100px;
   height: 29px;
-  margin: 14px auto;
+  margin: 0 auto 4px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -93,7 +92,6 @@
   background-position: center;
   transition: all 0.2s ease-out;
   color: transparent;
-  
 }
 
 .card__btn_saved:hover {
@@ -102,20 +100,19 @@
   color: transparent;
 }
 
-@media screen and (min-width:400px) {
-  .card{
+@media screen and (min-width: 400px) {
+  .card {
     max-width: 342px;
     min-height: 309px;
   }
-  
 }
 
 @media screen and (min-width: 768px) {
-  .card{
-   max-width: 360px;
-    min-height: 319px;
+  .card {
+    max-width: 342px;
+    height: 309px;
   }
-  
+
   .card__title {
     font-size: 15px;
   }
@@ -126,8 +123,18 @@
     height: 200px;
   }
   .card__btn {
-    margin: auto;
+    margin: 0 121px 14px 121px;
     font-size: 12px;
     line-height: 11px;
   }
-};
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    max-width: 360px;
+    height: 319px;
+  }
+  .card__btn {
+    margin: 0 auto 10px;
+  }
+}

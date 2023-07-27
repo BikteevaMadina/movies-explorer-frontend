@@ -2,12 +2,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin: 70px;
-  padding: 20px 30px 20px 19px;
+  padding: 20px 0 20px 0;
   border-radius: 9px;
   justify-content: space-between;
   background: #fdfdfd;
   box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+  max-width: 1140px;
+  width: 100%;
+  margin-bottom: 69px;
 }
 
 ::placeholder {
@@ -19,7 +21,7 @@
 
 .search:after {
   position: absolute;
-  bottom: 0;
+  bottom: 41px;
   left: 0;
   content: "";
   height: 1px;
@@ -35,7 +37,8 @@
   width: 100%;
   flex: 1;
   justify-content: space-between;
-  padding-right: 50px;
+  padding-right: 49px;
+  max-width: 894px;
 }
 
 .search__form:after {
@@ -52,7 +55,7 @@
   content: "";
   height: 100%;
   width: 34px;
-  left: 0;
+  left: 17px;
   background-image: url(../../images/icon.svg);
   background-repeat: no-repeat;
 }
@@ -60,7 +63,7 @@
 .search__form-input {
   background-color: transparent;
   border: none;
-  margin-left: 40px;
+  margin-left: 60px;
   width: 100%;
   outline: none;
 }
@@ -95,10 +98,16 @@
   opacity: 0.7;
 }
 
+.filter {
+  box-sizing: border-box;
+  margin-right: 30px;
+  width: 167px;
+}
+
 .filter__label {
   position: relative;
   display: inline-block;
-  width: 150px;
+  width: 167px;
   height: 20px;
 }
 
@@ -143,7 +152,7 @@
   left: 50px;
   color: #000;
   font-family: Inter;
-  font-size: 11px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
@@ -156,10 +165,37 @@
   background-color: rgba(61, 220, 132, 1);
 }
 
+@media screen and (max-width: 1024px) {
+  .search {
+    max-width: 980px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .search {
-    margin: 70px 30px;
+    /* margin: 70px 30px;
     padding: 20px;
+  } */
+    max-width: 708px;
+    padding: 22px 0 18px 0;
+    margin-bottom: 109px;
+  }
+
+  .search:after {
+    bottom: 0;
+  }
+
+  .search__form {
+    max-width: 481px;
+    padding-right: 0;
+  }
+
+  .search__form:after {
+    right: -20px;
+  }
+
+  .filter {
+    margin-right: 20px;
   }
 }
 
@@ -191,13 +227,30 @@
 
 @media screen and (max-width: 375px) {
   .search {
-    margin: 80px 10px;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 19px 0 19px;
   }
 
-  .search__form-input::placeholder{
+  .search__form-input::placeholder {
     font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .search__form {
+    margin: 0 19px 0 19px;
+  }
+
+  .filter{
+    max-width: 148px;
+  }
+
+  .filter__switch:after {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
   }
 }

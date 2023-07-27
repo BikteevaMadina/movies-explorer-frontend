@@ -50,7 +50,7 @@
 .header__personal_account-link {
   display: flex;
   align-items: center;
-  width: 90px;
+  width: 80px;
   height: 32px;
   text-decoration: none;
   font-weight: 500;
@@ -59,11 +59,12 @@
   color: black;
   transition: opacity 0.3s ease-in;
   background: url(../../images/icon__COLOR_icon-main.svg) no-repeat;
-  background-position: 68px 10px;
+  background-position: 80px 10px;
   border-radius: 40px;
   box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
   text-align: center;
   letter-spacing: inherit;
+  padding: 0 11px 0 11px;
 }
 
 .header__personal-account-link:hover {
@@ -98,8 +99,8 @@
     content: "";
     background-color: black;
     position: absolute;
-    width: 22px;
-    height: 3px;
+    width: 29px;
+    height: 4px;
     transition: all 0.3s ease 0s;
   }
 
@@ -107,21 +108,21 @@
     content: "";
     background-color: black;
     position: absolute;
-    width: 22px;
-    height: 3px;
-    left: -3px;
-    top: 10px;
+    width: 29px;
+    height: 4px;
+    left: -9px;
+    top: 11px;
     transition: all 0.3s ease 0s;
   }
 
   .header__burger::before {
-    left: -3px;
+    left: -9px;
     top: 0;
   }
 
   .header__burger::after {
-    left: -3px;
-    bottom: 0;
+    left: -9px;
+    bottom: -1px;
   }
 
   .header__burger:hover {
@@ -161,6 +162,21 @@
   }
 
   .header__burger {
-    width: 28px;
+    width: 22px;
+  }
+
+  .header__burger::before{
+    width: 22px;
+  }
+
+  .header__burger::after{
+    width: 22px;
+    bottom: 0;
+  }
+
+  .header__burger span{
+    width: 22px;
+    top: 10px;
   }
 }
+

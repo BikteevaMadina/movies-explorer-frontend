@@ -43,8 +43,9 @@ const Movies = () => {
   return (
     <>
       <Header />
-      <SearchForm />
+    
       <Content>
+          <SearchForm />
         {defoultLoading ? (
           <Preloader />
         ) : (

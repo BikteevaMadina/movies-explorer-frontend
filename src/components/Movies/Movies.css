@@ -9,7 +9,7 @@
   text-align: center;
   height: 36px;
   padding: 0;
-  margin: 50px 0 80px;
+  margin: 0 auto 80px;
   outline-style: none;
   cursor: pointer;
   transition: opacity 0.3s ease-in;
@@ -24,11 +24,13 @@
 @media screen and (max-width: 770px) {
   .movies__button {
     width: calc(100% - 60px);
+    margin: 0 0 100px 0;
   }
 }
 
 @media screen and (max-width: 400px) {
   .movies__button {
     width: calc(100% - 20px);
+   
   }
 }
