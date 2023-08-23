@@ -17,7 +17,7 @@ import Loading from "../Loading/Loading.js";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 import Error from "../../utils/errors";
 
-import * as api from "../../utils/mainApi";
+import * as api from "../../utils/MainApi.js";
 import * as auth from "../../utils/auth";
 
 function App() {
