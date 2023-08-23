@@ -1,55 +1,128 @@
-import { Link } from "react-router-dom";
-import logo from "../../images/logo.svg";
+import useValid from "../Valid/useValid";
+import Logo from "../Logo/Logo";
+import React from "react";
 
-function AuthForm({
-  title,
-  children,
-  buttonText,
-  onSubmit,
-  route,
-  linkToSignin,
-  textToRegistr,
-  isValid,
-}) {
+function AuthForm(props) {
+  const { values, 
+          errors, 
+          handleChange, 
+          handleSubmit } = useValid(
+    props.onLogin
+  );
+
   return (
-    <main className="form auth__form">
-      <section className="auth__container">
-        <Link to="/" className="auth__container_logo-link">
-          <img
-            className="auth__container_logo"
-            src={logo}
-            alt="Логотип сайта"
-          />
-        </Link>
-        <h2 className="auth__container_header">{title}</h2>
-        <form
-          className="auth__container_form"
-          method="get"
-          onSubmit={onSubmit}
-          noValidate
-        >
-          <fieldset className="auth__container_fieldset">{children}</fieldset>
-          <div className="auth__container_link-buttons">
-            <button
-              className={`auth__container_submit ${
-                !isValid && "auth__container_submit-disabled"
-              }`}
-              type="submit"
-              aria-label={buttonText}
-              disabled={!isValid && true}
-            >
-              {buttonText}
-            </button>
-            <p className="auth__container_text">
-              {textToRegistr}
-              <Link className="auth__container_link" to={route}>
-                {linkToSignin}
-              </Link>
-            </p>
+    <section className="auth">
+      <div className="auth__header">
+        <div className="auth__header-item">
+          <div className="auth__logo">
+            <Logo />
           </div>
-        </form>
-      </section>
-    </main>
+          <h1 className="auth__text">{props.title}</h1>
+        </div>
+      </div>
+      <form name={props.authType} 
+            onSubmit={handleSubmit} 
+            className="form">
+        <ul className="auth__container">
+          {props.authType === "register" && (
+            <li className="auth__item-form">
+              <p className="auth__name">Имя</p>
+              <input
+                className="auth__input"
+                value={values.name || ""}
+                onChange={handleChange}
+                placeholder="Имя"
+                maxLength="30"
+                minLength="2"
+                name="name"
+                type="text"
+                id="name"
+                required
+              />
+            </li>
+          )}
+          {props.authType === "register" && (
+            <p className="auth__valid-text">
+              {errors.name && "Имя должно состоять из минимум двух букв"}
+            </p>
+          )}
+          <li className="auth__item-form">
+            <p className="auth__name">E-mail</p>
+            <input
+              pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"
+              className="auth__input"
+              value={values.email || ""}
+              onChange={handleChange}
+              placeholder="E-mail"
+              maxLength="30"
+              minLength="2"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+          </li>
+          <p className="auth__valid-text">
+            {errors.email && "Пример email: user@example.com"}
+          </p>
+          <li className="auth__item-form">
+            <p className="auth__name">Пароль</p>
+            <input
+              pattern="^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$"
+              className="auth__input"
+              value={values.password || ""}
+              onChange={handleChange}
+              placeholder="Пароль"
+              type="password"
+              id="password"
+              name="password"
+              maxLength="30"
+              minLength="2"
+              required
+            />
+          </li>
+          <p className="auth__valid-text">
+            {errors.password &&
+              "Пароль должен содержать как минимум 8 символов. Одну букву нижнего " +
+                "регистра, одну верхнего, одну цифру и хотя бы один спецсимвол"}
+          </p>
+        </ul>
+        <div className="auth__item">
+          <button
+            className={`${
+              props.authType === "register"
+                ? "auth__item-button"
+                : "auth__item-button auth__item-button-login"
+            }
+                              ${
+                                props.authType === "register"
+                                  ? (errors.name ||
+                                      errors.email ||
+                                      errors.password ||
+                                      values.name === undefined ||
+                                      values.email === undefined ||
+                                      values.password === undefined) &&
+                                    "auth__item-button_disable"
+                                  : (errors.email ||
+                                      errors.password ||
+                                      values.email === undefined ||
+                                      values.password === undefined) &&
+                                    "auth__item-button_disable"
+                              }`}
+            type="submit"
+          >
+            {props.button}
+          </button>
+          <div className="auth__item-container">
+            <p className="auth__item-text">{props.text}</p>
+            <a className="auth__item-link" href={props.linkRout}>
+              {props.link}
+            </a>
+          </div>
+        </div>
+      </form>
+    </section>
   );
 }
+
 export default AuthForm;

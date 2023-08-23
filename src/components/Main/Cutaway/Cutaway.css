@@ -73,7 +73,13 @@
   }
 }
 
-@media screen and (max-width: 1015px) {
+@media screen and (max-width: 1218px) {
+  .cutaway {
+    background-position: 750px 60px;
+  }
+}
+
+@media screen and (max-width: 1065px) {
   .cutaway {
     background-position: 550px 60px;
   }

@@ -1,62 +1,51 @@
-import { useState, useCallback } from "react";
-import isEmail from "validator/es/lib/isEmail";
+import{useState, useEffect} from "react";
 
-export function useFormAndValidation() {
-    
-  const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
-  const [isValid, setIsValid] = useState(true);
+const useValid = (onLogin) => {
+    const [inactive, setInactive] = useState(null);
+    const [values, setValues] = useState({});
+    const [errors, setErrors] = useState({});
 
-  const message = {
-    name: "Введите корректное имя",
-    email: "Введите корректный email",
-    password: "Введите корректный пароль",
-    movie: "Введите корректное название фильма",
-  };
+    useEffect(() => {
+        setValues({});
+        setErrors({});
+        setInactive(false);
+    }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+        setValues({
+            ...values,
+            [name]: value,
+        });
 
-    if (
-      e.target.value === "" ||
-      (e.target.value.match(/\s/g) !== null &&
-        e.target.value.match(/\s/g).length === e.target.value.length)
-    ) {
-      e.target.setCustomValidity(message[name]);
-    } else {
-      e.target.setCustomValidity("");
+        setErrors({
+            ...errors,
+            [name]: event.target.validationMessage,
+        });
+
+        setInactive(event.target.closest(".form").checkValidity());
+    };
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        onLogin(values);
     }
 
-    if (name === "email") {
-      if (!isEmail(value)) {
-        e.target.setCustomValidity(message[name]);
-      } else {
-        e.target.setCustomValidity("");
-      }
+    const resetForm = () => {
+        setValues({});
+        setErrors({});
+        setInactive(false);
     }
 
-    setErrors({ ...errors, [name]: e.target.validationMessage });
-
-    setIsValid(e.target.closest("form").checkValidity());
-  };
-
-  const resetForm = useCallback(
-    (newValues = {}, newErrors = {}, newIsValid = true) => {
-      setValues(newValues);
-      setErrors(newErrors);
-      setIsValid(newIsValid);
-    },
-    [setValues, setErrors, setIsValid]
-  );
-
-  return {
-    values,
-    handleChange,
-    errors,
-    isValid,
-    resetForm,
-    setValues,
-    setIsValid,
-  };
+    return {
+        values,
+        errors,
+        inactive,
+        handleChange,
+        handleSubmit,
+        resetForm,
+        setValues
+    };
 }
+
+export default useValid;
