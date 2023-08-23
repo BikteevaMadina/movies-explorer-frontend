@@ -45,7 +45,7 @@ function App() {
     }
     try {
       await handleSaveMovie();
-      const userInfo = await api.getUserInfo();
+      const userInfo = await api.getUserById();
       setCurrentUser(userInfo);
 
       setLoggedIn(true);
@@ -128,7 +128,7 @@ function App() {
           ...data,
           email: currentUser.email,
         };
-        const userData = await api.updateUserInfo(data);
+        const userData = await api.updateUser(data);
       setCurrentUser(userData);
       setIsUserRegistration(true);
       setMessage("Новые данные сохранены");

@@ -8,7 +8,7 @@ const checkResult = (res) => {
     else return Promise.reject(`${res.status} ${res.statusText}`);
 }
 
-export async function getUserInfo() {
+export async function getUserById() {
     const data = await fetch(`${baseUrl}/users/me`, {
 
         method: "GET",
@@ -22,7 +22,7 @@ export async function getUserInfo() {
     return checkResult(data);
 }
 
-export async function updateUserInfo(userInfo) {
+export async function updateUser(userInfo) {
     const data = await fetch(`${baseUrl}/users/me`, {
 
         method: "PATCH",
@@ -65,7 +65,7 @@ export async function saveMovie({
     const data = await fetch(`${baseUrl}/movies`, {
 
         method: "POST",
-        
+
         headers: {
             authorization: `Bearer ${localStorage.getItem('jwt')}`,
             "Content-Type": "application/json",
