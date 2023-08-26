@@ -60,7 +60,7 @@ const Movies = (props) => {
           />
           {moviesNotFound && <SearchErrors />}
           {errorInquiry && <SearchProblem />}
-          {render ? (
+          {render ? 
             <MoviesCardList
               flag="add-save-btn"
               onSave={props.onSave}
@@ -68,9 +68,8 @@ const Movies = (props) => {
               savedMovies={props.savedMovies}
               onDelete={props.onDelete}
             />
-          ) : (
-            <Preloader />
-          )}
+           : <Preloader />
+          }
         </div>
       </main>
       <Footer />

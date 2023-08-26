@@ -45,7 +45,7 @@ const MoviesCardList = ({ cards, flag, savedMovies, onSave, onDelete }) => {
           document.querySelectorAll(".movies__card_item")
         )
           .reduce(
-            (acc, { offsetTop: n }) => (
+            (acc, {offsetTop: n}) => (
               // eslint-disable-next-line no-sequences
               acc[acc.length - 1]?.[0] === n || acc.push([n, 0]),
               acc[acc.length - 1][1]++,

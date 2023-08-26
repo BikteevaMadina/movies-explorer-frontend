@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 
 function Login(props) {
-  return !props.auth ? (
+  return (!props.auth ? 
     <main>
       <AuthForm
         onLogin={props.onLogin}
@@ -16,8 +16,9 @@ function Login(props) {
         button="Войти"
       />
     </main>
-  ) : (
+  : (
     <Navigate to="/movies" />
+  )
   );
 }
 

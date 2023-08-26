@@ -42,7 +42,7 @@ const MoviesCard = ({ card,
       if (card._id) {
         const answer = await onDelete(card._id);
 
-        if (answer) return;
+        if (answer) return
 
         return setSaveMovie(false);
       }

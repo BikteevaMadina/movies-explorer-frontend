@@ -4,7 +4,7 @@ import AuthForm from "../AuthForm/AuthForm";
 
 
 function Register(props) {
-  return !props.auth ? (
+  return (!props.auth ? 
     <main>
       <AuthForm
         name={["name", "email", "password"]}
@@ -17,7 +17,7 @@ function Register(props) {
         onLogin={props.onLogin}
       />
     </main>
-  ) : (
+   : 
     <Navigate to="/movies" />
   );
 }
