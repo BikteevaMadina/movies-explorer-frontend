@@ -2,7 +2,7 @@ import ok from "../../images/ok.svg";
 import no from "../../images/no.svg";
 import React from "react";
 
-function Loading({ isSuccess, onClose, isOpen, onMessage }) {
+function Loading({ isAuth, onClose, isOpen, onMessage }) {
   const onClosePopups = () => {
     onClose();
   };
@@ -15,12 +15,12 @@ function Loading({ isSuccess, onClose, isOpen, onMessage }) {
           onClick={onClosePopups}
         />
         <img
-          src={isSuccess ? ok : no}
-          alt={isSuccess ? "Регистрация успешна" : "Ошибка регистрации"}
+          src={isAuth ? ok : no}
+          alt={isAuth ? "Регистрация успешна" : "Ошибка регистрации"}
           className="popup__type_loading-icon"
         />
         <h3 className="popup__type_loading-title">
-          {isSuccess ? `${onMessage}` : `${onMessage}`}
+          {isAuth ? `${onMessage}` : `${onMessage}`}
         </h3>
       </div>
     </div>

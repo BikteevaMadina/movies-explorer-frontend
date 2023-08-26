@@ -237,7 +237,7 @@ function App() {
         isOpen={isLoading}
         onMessage={message}
         onClose={closeAllPopups}
-        isSuccess={isUserRegistration}
+        isAuth={isUserRegistration}
       />
     </CurrentUserContext.Provider>
   );
