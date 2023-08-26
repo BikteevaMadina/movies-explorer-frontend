@@ -43,7 +43,7 @@ function AuthForm(props) {
           )}
           {props.authType === "register" && (
             <p className="auth__valid-text">
-              {errors.name && "Имя должно состоять из минимум двух букв"}
+              {errors.name && "Имя должно содержать не менее двух букв"}
             </p>
           )}
           <li className="auth__item-form">
@@ -63,7 +63,7 @@ function AuthForm(props) {
             />
           </li>
           <p className="auth__valid-text">
-            {errors.email && "Пример email: user@example.com"}
+            {errors.email && "Пример email: pochta@yandex.ru"}
           </p>
           <li className="auth__item-form">
             <p className="auth__name">Пароль</p>
@@ -83,8 +83,7 @@ function AuthForm(props) {
           </li>
           <p className="auth__valid-text">
             {errors.password &&
-              "Пароль должен содержать как минимум 8 символов. Одну букву нижнего " +
-                "регистра, одну верхнего, одну цифру и хотя бы один спецсимвол"}
+              "Пароль должен содержать минимум 8 символов. Одну букву нижнего регистра, одну верхнего, одну цифру и один спецсимвол"}
           </p>
         </ul>
         <div className="auth__item">
