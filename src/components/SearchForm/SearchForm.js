@@ -20,6 +20,7 @@ function SearchForm({onCard, tag, onReset}) {
             if (checked === true) setCheckbox(true);
         }
         setRender(true);
+        onCard(searchTime, checkbox);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

@@ -58,7 +58,7 @@ const MoviesCard = ({ card,
 
   return (
     render && (
-      <li className="movies__card_item">
+    <>
         <div className="movies__card_info">
           <h2 className="movies__card_title">{card.nameRU}</h2>
           <p className="movies__card_time">{`${Math.floor(
@@ -90,7 +90,7 @@ const MoviesCard = ({ card,
         >
           Сохранить
         </button>
-      </li>
+        </>
     )
   );
 };

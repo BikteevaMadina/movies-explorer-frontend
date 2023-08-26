@@ -90,7 +90,7 @@ const MoviesCardList = ({ cards, flag, savedMovies, onSave, onDelete }) => {
         {cards.map((card, index) => {
           if (index < moreMovies) {
             return (
-              <li className="movies__item">
+              <li key={card.id || card.movieId} className="movies__item">
 
                 <MoviesCard
                   key={card.id || card.movieId}

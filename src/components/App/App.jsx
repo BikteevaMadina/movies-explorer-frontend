@@ -90,7 +90,8 @@ function App() {
     try {
       const userToken = await auth.authorization(data);
       if (userToken) {
-        localStorage.setItem("jwt", userToken.token);
+        localStorage.setItem("jwt", userToken._id);
+        console.log(userToken);
         setLoggedIn(true);
         await handleCheckUserToken();
         navigate("/movies");
@@ -107,7 +108,7 @@ function App() {
       await auth.registration(data);
       await handleUserAuthorization(data);
       setIsUserRegistration(true);
-      setMessage("Пользователь зарегестрирован");
+      setMessage("Пользователь зарегистрирован");
       setIsLoading(true);
     } catch (error) {
       const errorServer = Error(error.status)
@@ -236,7 +237,7 @@ function App() {
         isOpen={isLoading}
         onMessage={message}
         onClose={closeAllPopups}
-        isAuth={isUserRegistration}
+        isSuccess={isUserRegistration}
       />
     </CurrentUserContext.Provider>
   );
