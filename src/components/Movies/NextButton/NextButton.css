@@ -11,9 +11,10 @@
 }
 
 .rolling__movies_btn__button {
-  min-width: 320px;
+  max-width: 1140px;
+  width: 100%;
   min-height: 36px;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 0;
   padding: 0;
   border: #e8e8e8 1px solid;
@@ -39,15 +40,15 @@
 @media screen and (max-width: 768px) {
   .rolling__movies_btn_none {
     margin: 0 auto 120px auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
+  }  
+  
   .rolling__movies_btn__button {
     margin-top: 80px;
     margin-bottom: 0;
   }
 }
+
+
 
 @media screen and (max-width: 480px) {
   .rolling__movies_btn__button {

@@ -1,16 +1,17 @@
+
 .header__navigate_container {
-  min-width: 221px;
-  margin-left: 3px;
+  min-width: 231px;
   display: flex;
-  margin-right: 5.47vw;
+  margin-right: 2.47vw;
   list-style-type: none;
   flex-direction: row;
+  gap: 6px;
 }
 
 .header__navigate_link {
   text-decoration: none;
   font-style: normal;
-  margin: 0 50px 0 0;
+  margin: 11px;
   line-height: 18px;
   font-weight: 400;
   font-size: 13px;
@@ -19,13 +20,18 @@
   border: none;
 }
 
+.header__box{
+  display: flex;
+  align-items: center;
+}
+
 .header__navigate_link:hover {
   transition: 1s ease-in;
   opacity: 0.6;
 }
 
 .header__navigate_link:first-of-type {
-  margin-right: 17px;
+  margin-right: 18px;
 }
 
 

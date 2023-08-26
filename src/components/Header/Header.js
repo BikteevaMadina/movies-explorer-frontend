@@ -21,9 +21,11 @@ const Header = ({auth}) => {
         <header className={auth ? "header": "header__active"}>
             <div className='header__logo-container'>
                 <Logo/>
-                {auth && <LoginNav onClick={handleClickOpen} />}
             </div>
+            <div className="header__box">
+            {auth && <LoginNav onClick={handleClickOpen} />}
             {auth ? <ProfileNav isOpen={handleClickOpen}/> : <AuthNav/>}
+            </div>
             <Navigation isOpen={isOpen} onClick={handleClickClose}/>
         </header>
     );

@@ -83,12 +83,11 @@ const MoviesCard = ({ card,
         </a>
         <button
           className={`movies__card_${flag} movies__card_${flag}_${
-            saveMovie ? "active" : ""
+            saveMovie ? "active" : "" 
           }`}
           type="button"
           onClick={handleSaveMovie}
-        >
-          Сохранить
+        >Сохранить
         </button>
         </>
     )

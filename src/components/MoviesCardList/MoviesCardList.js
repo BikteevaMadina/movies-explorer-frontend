@@ -85,7 +85,7 @@ const MoviesCardList = ({ cards, flag, savedMovies, onSave, onDelete }) => {
     }
 };
   return (
-    <section className="movies">
+    <section className="movies__cards">
       <ul className="movies__list">
         {cards.map((card, index) => {
           if (index < moreMovies) {
