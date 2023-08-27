@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import "./SavedMovies.css";
 
@@ -81,18 +82,19 @@ const SavedMovies = ({ savedMovies, onSave, onDelete }) => {
 
           {errorInquiry && <SearchProblem />}
 
-          {render 
-          ? (
-            <MoviesCardList
-              onDelete={handleDeleteMovies}
-              flag="delete-save-btn"
-              savedMovies={savedMovies}
-              onSave={onSave}
-              cards={movies}
-            />
-          ) : (
-            <Preloader />
-          )}
+          {render
+            ? (
+              <MoviesCardList
+                onDelete={handleDeleteMovies}
+                flag="delete-save-btn"
+                savedMovies={savedMovies}
+                onSave={onSave}
+                cards={movies}
+                isShowNext={false}
+              />
+            ) : (
+              <Preloader />
+            )}
         </section>
       </div>
       <Footer />

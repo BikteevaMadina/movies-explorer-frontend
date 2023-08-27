@@ -36,9 +36,9 @@ function Profile(props) {
                     <label className="profile__label" htmlFor="name">
                         <span className="profile__subtitle">Имя</span>
                         <input
+                            defaultValue={values.name || name}
                             className="profile__input"
                             onChange={handleChange}
-                            defaultValue={values.name || name}
                             placeholder="Имя"
                             maxLength="30"
                             minLength="2"
@@ -66,9 +66,14 @@ function Profile(props) {
                                 || values.email === email
                                 || values.name === name
                                 || !currentUserEdit)
-                            && "profile__btn_disable"
+                            && "profile__button_disable"
                         }`}
-                        type="submit">
+                        type="submit"
+                        disabled={(errors.email
+                            || errors.name
+                            || values.email === email
+                            || values.name === name
+                            || !currentUserEdit)}>
                         Редактировать
                     </button>
                 </form>

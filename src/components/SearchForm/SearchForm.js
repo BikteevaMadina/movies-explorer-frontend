@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from "react";
+
+
+import React, { useEffect, useState } from "react";
 import searchingThing from "../../images/icon.svg";
 import searchingBtn from "../../images/find.svg";
 
 
 
-function SearchForm({onCard, tag, onReset}) {
+function SearchForm({ onCard, tag, onReset }) {
 
     const [searchTime, setSearchTime] = useState("");
 
@@ -20,8 +22,8 @@ function SearchForm({onCard, tag, onReset}) {
             if (checked === true) setCheckbox(true);
         }
         setRender(true);
-        onCard(searchTime, checkbox);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // onCard(searchTime, checkbox);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleCheckboxChange = () => {
@@ -74,7 +76,7 @@ function SearchForm({onCard, tag, onReset}) {
                             src={searchingBtn}
                         />
                     </button>
-                    <div className="search__box"/>
+                    <div className="search__box" />
                     <div className="search__item">
                         <label className="search__tumbler">
                             <input
@@ -84,7 +86,7 @@ function SearchForm({onCard, tag, onReset}) {
                                 checked={checkbox}
                                 id="searchCheckbox"
                             />
-                            <span className="search__check search__check_off"/>
+                            <span className="search__check search__check_off" />
                         </label>
                         <p className="search__films">Короткометражки</p>
                     </div>
@@ -96,7 +98,7 @@ function SearchForm({onCard, tag, onReset}) {
                             className="search__checkbox"
                             onChange={handleCheckboxChange}
                         />
-                        <span className="search__check search__check_off"/>
+                        <span className="search__check search__check_off" />
                     </label>
                     <p className="search__films">Короткометражки</p>
                 </div>

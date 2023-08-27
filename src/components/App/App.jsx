@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     handleCheckUserToken();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); 
+  }, []);
 
   const handleCheckUserToken = async () => {
     const jwt = localStorage.getItem("jwt");
@@ -51,7 +51,6 @@ function App() {
       setLoggedIn(true);
       setRender(true);
     } catch (e) {
-
       console.warn(e);
       setRender(true);
     }
@@ -91,7 +90,6 @@ function App() {
       const userToken = await auth.authorization(data);
       if (userToken) {
         localStorage.setItem("jwt", userToken._id);
-        console.log(userToken);
         setLoggedIn(true);
         await handleCheckUserToken();
         navigate("/movies");
@@ -111,7 +109,7 @@ function App() {
       setMessage("Пользователь зарегистрирован");
       setIsLoading(true);
     } catch (error) {
-      const errorServer = Error(error.status)
+      const errorServer = Error(error.status);
       setMessage(errorServer);
       setIsLoading(true);
     }
@@ -129,7 +127,7 @@ function App() {
           ...data,
           email: currentUser.email,
         };
-        const userData = await api.updateUser(data);
+      const userData = await api.updateUser(data);
       setCurrentUser(userData);
       setIsUserRegistration(true);
       setMessage("Новые данные сохранены");
@@ -142,15 +140,13 @@ function App() {
   };
 
   const handleLoginOut = () => {
-   
     localStorage.removeItem("searchMovies");
-    localStorage.removeItem("checkbox"); 
+    localStorage.removeItem("checkbox");
     localStorage.removeItem("line");
     localStorage.removeItem("jwt");
     setLoggedIn(false);
     navigate("/");
   };
-
 
   const closeAllPopups = () => {
     setIsLoading(false);
@@ -167,6 +163,33 @@ function App() {
               <Header auth={loggedIn} />
               <Main />
             </>
+          }
+        />
+        <Route
+          exact
+          auth={loggedIn}
+          path="/signin"
+          element={<Login onLogin={handleUserAuthorization} />}
+        />
+
+        <Route
+          exact
+          path="/signup"
+          auth={loggedIn}
+          element={<Register onLogin={handleUserRegistration} />}
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute render={render} loggedIn={loggedIn}>
+              <Header auth={loggedIn} />
+              <Profile
+                onLogin={handleLoginOut}
+                updateUser={handleAddUserInfo}
+                handleCheckUserToken={handleCheckUserToken}
+              />
+            </ProtectedRoute>
           }
         />
 
@@ -189,8 +212,7 @@ function App() {
         <Route
           path="/saved-movies"
           element={
-            <ProtectedRoute render={render} 
-            loggedIn={loggedIn}>
+            <ProtectedRoute render={render} loggedIn={loggedIn}>
               <Header auth={loggedIn} />
               <SavedMovies
                 savedMovies={savedMovies}
@@ -202,38 +224,9 @@ function App() {
           }
         />
 
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute render={render} 
-            loggedIn={loggedIn}>
-              <Header auth={loggedIn} />
-              <Profile
-                onLogin={handleLoginOut}
-                updateUser={handleAddUserInfo}
-                handleCheckUserToken={handleCheckUserToken}
-              />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          exact
-          auth={loggedIn}
-          path="/signin"
-          element={<Login onLogin={handleUserAuthorization}  />}
-        />
-
-        <Route
-          exact
-          auth={loggedIn}
-          path="/signup"
-          element={<Register onLogin={handleUserRegistration}  />}
-        />
         <Route exact path="/*" element={<NotFoundPage />} />
       </Routes>
       <Loading
-        
         isOpen={isLoading}
         onMessage={message}
         onClose={closeAllPopups}

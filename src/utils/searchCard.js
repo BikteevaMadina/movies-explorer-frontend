@@ -3,7 +3,7 @@ export const searchCards = (movies, line, checkbox, tagSavedMovies) => {
   const searchMovies = [];
   movies.forEach((item) => {
     if (
-      checkbox
+      !checkbox
         ? item.nameRU.toLowerCase().includes(line) ||
           item.nameEN.toLowerCase().includes(line)
         : item.nameRU.toLowerCase().includes(line) & (item.duration < 40) ||

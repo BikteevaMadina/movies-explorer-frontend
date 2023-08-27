@@ -1,18 +1,18 @@
 import "./NextButton.css";
 import React from "react";
 
-function NextButton({ cards, maxMovies, onClick }) {
+function NextButton({ cards, moreMovies, onClick }) {
   return (
     <div
       className={
-        cards.length <= maxMovies
+        cards.length <= moreMovies
           ? "rolling__movies_btn rolling__movies_btn-none"
           : "rolling__movies_btn"
       }
     >
       <button
         className={
-          cards.length <= maxMovies
+          cards.length <= moreMovies
             ? "rolling__movies_btn__button-none"
             : "rolling__movies_btn__button"
         }
