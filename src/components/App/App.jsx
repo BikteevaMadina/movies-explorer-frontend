@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../context/CurrentUserContext.js";
 import React, { useState, useEffect } from "react";
 
@@ -169,14 +169,14 @@ function App() {
           exact
           auth={loggedIn}
           path="/signin"
-          element={<Login onLogin={handleUserAuthorization} />}
+          element={loggedIn ? <Navigate to='/'/> : <Login onLogin={handleUserAuthorization} />}
         />
 
         <Route
           exact
           path="/signup"
           auth={loggedIn}
-          element={<Register onLogin={handleUserRegistration} />}
+          element={loggedIn ? <Navigate to='/'/> : <Register onLogin={handleUserRegistration} />}
         />
 
         <Route
