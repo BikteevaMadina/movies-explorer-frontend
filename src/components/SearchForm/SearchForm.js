@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import searchingThing from "../../images/icon.svg";
 import searchingBtn from "../../images/find.svg";
@@ -22,7 +20,7 @@ function SearchForm({ onCard, tag, onReset }) {
             if (checked === true) setCheckbox(true);
         }
         setRender(true);
-        // onCard(searchTime, checkbox);
+         onCard(searchTime, checkbox);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
