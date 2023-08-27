@@ -166,34 +166,6 @@ function App() {
           }
         />
         <Route
-          exact
-          auth={loggedIn}
-          path="/signin"
-          element={loggedIn ? <Navigate to='/'/> : <Login onLogin={handleUserAuthorization} />}
-        />
-
-        <Route
-          exact
-          path="/signup"
-          auth={loggedIn}
-          element={loggedIn ? <Navigate to='/'/> : <Register onLogin={handleUserRegistration} />}
-        />
-
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute render={render} loggedIn={loggedIn}>
-              <Header auth={loggedIn} />
-              <Profile
-                onLogin={handleLoginOut}
-                updateUser={handleAddUserInfo}
-                handleCheckUserToken={handleCheckUserToken}
-              />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
           path="/movies"
           element={
             <ProtectedRoute render={render} loggedIn={loggedIn}>
@@ -208,7 +180,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/saved-movies"
           element={
@@ -222,8 +193,44 @@ function App() {
               />
             </ProtectedRoute>
           }
+        />{" "}
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute render={render} loggedIn={loggedIn}>
+              <Header auth={loggedIn} />
+              <Profile
+                onLogin={handleLoginOut}
+                updateUser={handleAddUserInfo}
+                handleCheckUserToken={handleCheckUserToken}
+              />
+            </ProtectedRoute>
+          }
         />
-
+        <Route
+          exact
+          auth={loggedIn}
+          path="/signin"
+          element={
+            loggedIn ? (
+              <Navigate to="/profile" />
+            ) : (
+              <Login onLogin={handleUserAuthorization} />
+            )
+          }
+        />
+        <Route
+          exact
+          path="/signup"
+          auth={loggedIn}
+          element={
+            loggedIn ? (
+              <Navigate to="/profile" />
+            ) : (
+              <Register onLogin={handleUserRegistration} />
+            )
+          }
+        />
         <Route exact path="/*" element={<NotFoundPage />} />
       </Routes>
       <Loading
