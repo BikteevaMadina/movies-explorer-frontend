@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 //import Content from "./Content";
 import Footer from "../Footer/Footer";
@@ -12,30 +11,17 @@ import { searchCards } from "../../utils/searchCard";
 
 import * as moviesApi from "../../utils/MoviesApi";
 
-
 const Movies = (props) => {
   const [movies, setMovies] = useState([]);
 
   const [errorInquiry, setErrorInquiry] = useState(false);
   const [moviesNotFound, setMoviesNotFound] = useState(false);
-  const [data, setData] = useState([])
+  //const [data, setData] = useState([]);
   const [render, setRender] = useState(true);
 
   const handleResettingMovies = () => {
     setMovies([]);
   };
-
-  useEffect(() => {
-    async function fetchMovies() {
-      const d = await moviesApi.getMovies();
-      setData(d);
-    }
-    fetchMovies();
-    setMovies(data);
-    const searchMovies = JSON.parse(localStorage.getItem("searchMovies"));
-    if (searchMovies)
-      setMovies(searchMovies);
-  }, [data]);
 
   const handleSearchingCards = async (line, checkbox) => {
     try {
@@ -43,7 +29,7 @@ const Movies = (props) => {
       setErrorInquiry(false);
       setMoviesNotFound(false);
 
-      // const data = await moviesApi.getMovies();
+      const data = await moviesApi.getMovies();
 
       const searchMovies = searchCards(data, line, checkbox);
 
@@ -57,6 +43,21 @@ const Movies = (props) => {
       console.warn(e);
     }
   };
+  // useEffect(() => {
+  //   async function fetchMovies() {
+  //     const d = await moviesApi.getMovies();
+  //     setData(d);
+  //   }
+  //   fetchMovies();
+  //   setMovies(data);
+  //   const searchMovies = JSON.parse(localStorage.getItem("searchMovies"));
+  //   if (searchMovies) setMovies(searchMovies);
+  // }, [data]);
+
+  useEffect(() => {
+    const searchMovies = JSON.parse(localStorage.getItem("searchMovies"));
+    if (searchMovies) setMovies(searchMovies);
+}, []);
 
 
   return (
@@ -69,7 +70,7 @@ const Movies = (props) => {
           />
           {moviesNotFound && <SearchErrors />}
           {errorInquiry && <SearchProblem />}
-          {render ?
+          {render ? (
             <MoviesCardList
               flag="add-save-btn"
               onSave={props.onSave}
@@ -78,8 +79,9 @@ const Movies = (props) => {
               onDelete={props.onDelete}
               isShowNext={true}
             />
-            : <Preloader />
-          }
+          ) : (
+            <Preloader />
+          )}
         </div>
       </main>
       <Footer />

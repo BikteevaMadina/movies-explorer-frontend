@@ -138,6 +138,7 @@ color: transparent;
   .movies__card_item {
     max-width: 360px;
     height: 319px;
+    margin: 0 auto;
   }
   .movies__card_add-save-btn {
     margin: 0 auto ;

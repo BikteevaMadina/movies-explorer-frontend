@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import NextButton from "../Movies/NextButton/NextButton";
@@ -17,13 +16,11 @@ const MoviesCardList = ({ cards, flag, savedMovies, onSave, onDelete, isShowNext
 
   const [moreMovies, setMoreMovies] = useState(0);
   const [step, setStep] = useState(0);
-
   const [rerender, setRerender] = useState();
 
   useEffect(() => {
     setTimeout(() => {
-      const count = Array.from(
-        document.querySelectorAll(".movies__card_item"))
+      const count = Array.from(document.querySelectorAll(".movies__card_item"))
         .reduce(
           (acc, { offsetTop: n }) => (
             // eslint-disable-next-line no-sequences
@@ -43,8 +40,7 @@ const MoviesCardList = ({ cards, flag, savedMovies, onSave, onDelete, isShowNext
   useEffect(() => {
     window.addEventListener("resize", () => {
       setTimeout(() => {
-        const count = Array.from(
-          document.querySelectorAll(".movies__card_item")
+        const count = Array.from(document.querySelectorAll(".movies__card_item")
         )
           .reduce(
             (acc, { offsetTop: n }) => (
