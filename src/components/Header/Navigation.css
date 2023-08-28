@@ -1,0 +1,122 @@
+.navigation {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.navigation__open {
+  display: block;
+  top: -24px;
+}
+
+.navigation__content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 0 0 auto;
+  max-width: 520px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  flex-direction: column;
+  color: #000000;
+}
+
+.navigation__close {
+  min-height: 22px;
+  max-width: 22px;
+  right: 30px;
+  padding: 0;
+  top: 47px;
+  background-position: center;
+  background-color: #ffffff;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+}
+
+.navigation__close:hover {
+  transition: 1s ease-in;
+  opacity: 0.6;
+}
+
+.navigation__close_img {
+  max-width: 30px;
+  color: #000000;
+}
+
+.navigation__links {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+}
+
+.navigation__links_container {
+  margin: 24px auto 0 auto;
+  max-width: max-content;
+  text-decoration: none;
+  border-bottom: none;
+  padding-bottom: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navigation__links_container:first-of-type {
+  padding-top: 159px;
+}
+
+.navigation__links_container:last-of-type {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  border-bottom: none;
+  line-height: 22px;
+  color: #000000;
+}
+
+.navigation__button-container {
+  display: flex;  
+  margin: 0 auto 92px auto;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation__link_active {
+  border-bottom: #000000 2px solid;
+  padding-bottom: 5px;
+}
+
+@media screen and (max-width: 540px) {
+  .navigation__links_container:first-of-type {
+    padding-top: 144px;
+  }
+
+  .navigation__button-container {
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navigation__close {
+    right: 14px;
+    top: 44px;
+  }
+}

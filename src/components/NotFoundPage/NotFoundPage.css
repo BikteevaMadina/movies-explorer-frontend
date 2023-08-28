@@ -1,0 +1,55 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 246px 0 60px 0;
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+
+}
+
+.error__title {
+  font-weight: 400;
+  font-size: 140px;
+  line-height: calc(169 / 140);
+  margin: 0;
+}
+
+.error__message {
+  padding-bottom: 184px;
+}
+
+.error__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: opacity 0.3s ease-in;
+}
+
+.error__button:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width:768px) {
+  .error{
+    padding: 408px 0 222px 0;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .error{
+    padding: 329px 0 30px 0;
+  }
+
+  .error__message{
+    padding-bottom: 284px;
+  }
+  
+}
